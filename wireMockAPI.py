@@ -2,9 +2,6 @@
 # 2 - Abrir Git Bash e executar o arquivo .jar baixado com o seguinte comando: java -jar wiremock-jre8-standalone-2.33.2.jar
 # 3 - 
 
-from wsgiref import headers
-from matplotlib.font_manager import json_load
-from matplotlib.pyplot import get
 from requests import head, post, request
 import requests
 from requests.structures        import CaseInsensitiveDict
