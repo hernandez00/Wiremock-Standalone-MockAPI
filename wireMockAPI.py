@@ -1,8 +1,7 @@
 # 1 - Baixar Wiremock Standalone.
-# 2 - Abrir Git Bash e executar o arquivo .jar baixado com o seguinte comando: java -jar wiremock-jre8-standalone-2.33.2.jar
-# 3 - 
+# 2 - Abrir Git Bash e executar o arquivo .jar baixado com o seguinte comando:
+#       >> java -jar wiremock-jre8-standalone-2.33.2.jar
 
-from requests import head, post, request
 import requests
 from requests.structures        import CaseInsensitiveDict
 
@@ -15,7 +14,8 @@ def createMock():
     data = r'{ "request": { "url": "/get/this", "method": "GET" }, "response": { "status": 200, "body": "Here it is!\n" }}'
     resp = post(url=URL, data=data)
 
-    print(resp.status_code)
+    print(f'statu code: {resp.status_code} \n request: {resp.request} \n Aparent encoding: {resp.apparent_encoding} \n Encoding: {resp.encoding} \n Content: {resp.content} \n Cookies: {resp.cookies} \n Elapsed: {resp.elapsed} \n' +
+           f'Headers: {resp.headers} \n History: {resp.history} \n  RAW: {resp.raw} \n Json: {resp.json} \n Links: {resp.links} \n')
 
 def testMock():
     URL = 'http://localhost:8080/get/this'
@@ -37,11 +37,12 @@ def myTestMock():
 def shutDownWireMock():
     URL = 'http://localhost:8080/__admin/shutdown'
 
+    #TODO - try/except
     resp = requests.post(url=URL)
 
     print(f"{resp.content} \n {resp.status_code}")
 
-#createMock()
+createMock()
 #testMock()
 #myTestMock()
-shutDownWireMock()
+#shutDownWireMock()
