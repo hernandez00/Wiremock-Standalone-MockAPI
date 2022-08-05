@@ -2,7 +2,6 @@
 # 2 - Abrir Git Bash e executar o arquivo .jar baixado com o seguinte comando:
 #       >> java -jar wiremock-jre8-standalone-2.33.2.jar
 
-from ast import parse
 import requests
 import json
 from requests.structures        import CaseInsensitiveDict
