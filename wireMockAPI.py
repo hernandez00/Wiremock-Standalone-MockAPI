@@ -39,8 +39,8 @@ def testMock():
     jsonData = json.dumps(resp.json(), indent=4)
     testeDict = dict(resp.json())
 
-    print(testeDict['data']['idCotacao'])
-    #print(json.dumps(resp.json(), indent=4))
+    #print(testeDict['data']['idCotacao'])
+    print(json.dumps(resp.json(), indent=4))
 
 def myTestMock():
     URL = 'http://localhost:8080/api/mytest'
@@ -57,7 +57,7 @@ def shutDownWireMock():
 
     print(f"{resp.content} \n {resp.status_code}")
 
-createMock()
-#testMock()
+#createMock()
+testMock()
 #myTestMock()
 #shutDownWireMock()
