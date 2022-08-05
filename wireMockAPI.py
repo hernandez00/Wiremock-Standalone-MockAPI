@@ -57,7 +57,7 @@ def shutDownWireMock():
 
     print(f"{resp.content} \n {resp.status_code}")
 
-#createMock()
-testMock()
+createMock()
+#testMock()
 #myTestMock()
 #shutDownWireMock()
